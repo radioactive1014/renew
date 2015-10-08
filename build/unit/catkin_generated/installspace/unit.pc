@@ -1,0 +1,8 @@
+prefix=/home/rokon/renew/install
+
+Name: unit
+Description: Description of unit
+Version: 0.0.0
+Cflags: -I/home/rokon/renew/install/include
+Libs: -L/home/rokon/renew/install/lib -lunit
+Requires: roscpp

@@ -1,0 +1,8 @@
+prefix=/home/rokon/renew/install
+
+Name: utils
+Description: Description of utils
+Version: 0.0.0
+Cflags: -I/home/rokon/renew/install/include
+Libs: -L/home/rokon/renew/install/lib -lutils
+Requires: roscpp
