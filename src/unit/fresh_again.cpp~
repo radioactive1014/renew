@@ -84,10 +84,29 @@ void robot(int com)
 	tick = false;
 	}
 	*/
+
+
+
+
 	setCurrentOdeContext(0);
 	restoreOdeState(0);
 	saveOdeState(0);
 
+	
+
+
+
+
+	const dReal *pos_check= odeBodyGetPosition(LinkBall.body);
+	printf("First link position x %f y %f z%f    \n",pos_check[0],pos_check[1], pos_check[2]);
+		
+
+		/*	
+	int j = 0;
+	loop : std::cin >> j;
+	if ( j != 1)
+	goto loop;
+	*/
 
 
 	
@@ -254,10 +273,10 @@ cost = cost+1000;
 	dReal DesiredVelocity = -Error * Gain;
 
 	odeJointSetHingeParam(mainLink.joint,dParamFMax,dInfinity);
-	odeJointSetHingeParam(mainLink.joint,dParamVel,control[0]);
+	odeJointSetHingeParam(mainLink.joint,dParamVel,0 );//control[0]);
 
 	odeJointSetHingeParam(LinkBall.joint,dParamFMax,dInfinity);
-	odeJointSetHingeParam(LinkBall.joint,dParamVel,control[1]);
+	odeJointSetHingeParam(LinkBall.joint,dParamVel,0 );//control[1]);
 
 	stepOde(0);
 	saveOdeState(0);
@@ -337,6 +356,14 @@ int main(int argc, char **argv)
 	printf("stage position x%f y%f z%f   \n",pos[0],pos[1], pos[2]);
 
 
+
+
+
+
+	//ang_check = odeJointGetHingeAngle(LinkBall.joint);
+	//printf("angle after %f \n", ang_check);
+
+
 	//creating support //
 	//odeMassSetCapsuleTotal(int bodyId, float total_mass, float radius, float length)
 	support.radius = 0.05f ;
@@ -364,6 +391,9 @@ int main(int argc, char **argv)
 	odeBodySetPosition(LinkBall.body,0,0,h_floor_table+h_base-support.radius);
 	odeGeomSetBody(LinkBall.geom,LinkBall.body);
 	printf("Ball link body id %f, geom id %f \n", LinkBall.body, LinkBall.geom);
+
+	
+	
 
 
 
@@ -548,10 +578,32 @@ int main(int argc, char **argv)
 	odeJointAttach(obs.joint,stage.body,obs.body);
 	odeJointSetFixed(obs.joint);
 
-
-	//const dReal *pos_c = odeBodyGetPosition(ball.body);
-	//float angle_c=odeJointGetHingeAngle(LinkBall.joint);
 	
+	
+	float angle1=odeJointGetHingeAngle(support.joint);
+	printf("angle befor <<<<< %f \n", angle1);	
+	 odeJointDisable (support.joint);
+	 //odeJointDestroy(LinkBall.joint)
+
+	dQuaternion q2;
+	dQFromAxisAndAngle (q2,0,1,0,90*3.1416/180) ;  
+	odeGeomSetQuaternion(support.geom,q2);
+	
+	odeJointEnable (LinkBall.joint);
+	 angle1=odeJointGetHingeAngle(support.joint);
+	printf("angle after <<<<< %f \n", angle1);
+
+	
+
+
+
+
+	///*	
+	int j = 0;
+	loop : std::cin >> j;
+	if ( j != 1)
+	goto loop;
+	//*/
 
 	//dVector3 result;
 

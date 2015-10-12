@@ -1,0 +1,8 @@
+prefix=/home/rokon/renew/devel
+
+Name: camera
+Description: Description of camera
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/rokon/renew/devel/lib 
+Requires: 

@@ -69,6 +69,8 @@ void EXPORT_API odeBodyDestroy(int bodyId);
 
 ////////////by me/////////////
 void EXPORT_API odeJointSetFixed(int jointId);
+void odeJointDisable(int jointId);
+void odeJointEnable(int jointId);
 ////////////////////
 
 /////by me
@@ -78,6 +80,8 @@ float odeBodyGetPosRelPoint(int bodyId, float x, float y, float z);
 float odeBodyVectorFromWorld(int bodyId, float x, float y, float z );
 
 float odeBodyGetPosRelPoint1(int bodyId, float x, float y, float z);
+void odeJointDestroy(int jointId);
+
 //////////
 
 

@@ -621,6 +621,9 @@ float odeBodyGetRelPointPos(int bodyId, float x, float y, float z)
 	return dv[0];
 }
 
+
+
+
 ///////////////by me ////////////
 
 float odeBodyGetPosRelPoint(int bodyId, float x, float y, float z)
@@ -647,6 +650,37 @@ float odeBodyVectorFromWorld(int bodyId, float x, float y, float z )
 	dVector3 dv;
 	dBodyVectorFromWorld(c.bodies[bodyId], x, y, z, dv);
 	return dv[1];
+}
+
+
+
+void odeJointDisable(int jointId)
+{
+	ITERATE_THREADS(i)
+	{
+		dJointID joint = contexts[i].joints[jointId];
+		dJointDisable(joint);
+	}
+}
+
+void odeJointEnable(int jointId)
+{
+	ITERATE_THREADS(i)
+	{
+		dJointID joint = contexts[i].joints[jointId];
+		dJointEnable(joint);
+	}
+}
+
+
+
+void odeJointDestroy(int jointId)
+{
+	ITERATE_THREADS(i)
+	{
+		dJointID joint = contexts[i].joints[jointId];
+		dJointDestroy (joint);
+	}
 }
 
 

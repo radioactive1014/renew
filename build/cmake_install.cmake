@@ -89,6 +89,7 @@ ENDIF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unsp
 IF(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
   INCLUDE("/home/rokon/renew/build/gtest/cmake_install.cmake")
+  INCLUDE("/home/rokon/renew/build/camera/cmake_install.cmake")
   INCLUDE("/home/rokon/renew/build/main/cmake_install.cmake")
   INCLUDE("/home/rokon/renew/build/unit/cmake_install.cmake")
   INCLUDE("/home/rokon/renew/build/utils/cmake_install.cmake")

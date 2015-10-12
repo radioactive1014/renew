@@ -1,2 +1,1 @@
-main:unit:utils
--DCMAKE_BUILD_TYPE=RELEASE
+camera:main:unit:utils
