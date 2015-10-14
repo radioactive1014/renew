@@ -592,6 +592,32 @@ fresh_pbp/fast:
 .PHONY : fresh_pbp/fast
 
 #=============================================================================
+# Target rules for targets named fresh_short
+
+# Build rule for target.
+fresh_short: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 fresh_short
+.PHONY : fresh_short
+
+# fast build rule for target.
+fresh_short/fast:
+	$(MAKE) -f unit/CMakeFiles/fresh_short.dir/build.make unit/CMakeFiles/fresh_short.dir/build
+.PHONY : fresh_short/fast
+
+#=============================================================================
+# Target rules for targets named fresh_working
+
+# Build rule for target.
+fresh_working: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 fresh_working
+.PHONY : fresh_working
+
+# fast build rule for target.
+fresh_working/fast:
+	$(MAKE) -f unit/CMakeFiles/fresh_working.dir/build.make unit/CMakeFiles/fresh_working.dir/build
+.PHONY : fresh_working/fast
+
+#=============================================================================
 # Target rules for targets named sim
 
 # Build rule for target.
@@ -603,6 +629,19 @@ sim: cmake_check_build_system
 sim/fast:
 	$(MAKE) -f unit/CMakeFiles/sim.dir/build.make unit/CMakeFiles/sim.dir/build
 .PHONY : sim/fast
+
+#=============================================================================
+# Target rules for targets named single_working
+
+# Build rule for target.
+single_working: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 single_working
+.PHONY : single_working
+
+# fast build rule for target.
+single_working/fast:
+	$(MAKE) -f unit/CMakeFiles/single_working.dir/build.make unit/CMakeFiles/single_working.dir/build
+.PHONY : single_working/fast
 
 #=============================================================================
 # Target rules for targets named unit
@@ -768,7 +807,10 @@ help:
 	@echo "... fresh"
 	@echo "... fresh_again"
 	@echo "... fresh_pbp"
+	@echo "... fresh_short"
+	@echo "... fresh_working"
 	@echo "... sim"
+	@echo "... single_working"
 	@echo "... unit"
 	@echo "... unit_gencpp"
 	@echo "... unit_generate_messages"

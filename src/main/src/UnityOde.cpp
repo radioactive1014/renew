@@ -1650,6 +1650,7 @@ void EXPORT_API stepOde(int com)
 
 		dReal side2[3] = {.4,.4,0.05};
 		dReal side[3] = {.05,.05,0.02};
+		dReal side_main[3] = {0.14,.07,0.07};
 
 		OdeThreadContext & c=contexts[s_getIdx];
 
@@ -1688,15 +1689,15 @@ void EXPORT_API stepOde(int com)
 
 		dsDrawSphere( dBodyGetPosition(c.bodies[5]),dBodyGetRotation(c.bodies[5]),0.08f);	
 
-		dsDrawCapsule( dBodyGetPosition(c.bodies[7]),dBodyGetRotation(c.bodies[7]),0.12-0.05,0.05f);
-		dsDrawCapsule( dBodyGetPosition(c.bodies[9]),dBodyGetRotation(c.bodies[9]),0.60-0.05,0.05f);
+		dsDrawBox( dBodyGetPosition(c.bodies[7]),dBodyGetRotation(c.bodies[7]),side_main);
+		//dsDrawCapsule( dBodyGetPosition(c.bodies[9]),dBodyGetRotation(c.bodies[9]),0.60-0.05,0.05f);
 
-		dsDrawCapsule( dBodyGetPosition(c.bodies[11]),dBodyGetRotation(c.bodies[11]),1.17-0.05,0.05f);
-		dsDrawSphere( dBodyGetPosition(c.bodies[13]),dBodyGetRotation(c.bodies[13]),0.03f);
+		//dsDrawCapsule( dBodyGetPosition(c.bodies[11]),dBodyGetRotation(c.bodies[11]),1.17-0.05,0.05f);
+		dsDrawSphere( dBodyGetPosition(c.bodies[9]),dBodyGetRotation(c.bodies[9]),0.03f);
 		//dsDrawSphere( dBodyGetPosition(c.bodies[15]),dBodyGetRotation(c.bodies[15]),0.03f);
 
-		dsSetColor(1.0,0.0,0.0);
-		dsDrawBox( dBodyGetPosition(c.bodies[15]),dBodyGetRotation(c.bodies[15]),side);	
+		//dsSetColor(1.0,0.0,0.0);
+		//dsDrawBox( dBodyGetPosition(c.bodies[15]),dBodyGetRotation(c.bodies[15]),side);	
 	 	
 
 		

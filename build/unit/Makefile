@@ -206,6 +206,34 @@ fresh_pbp/fast:
 .PHONY : fresh_pbp/fast
 
 # Convenience name for target.
+unit/CMakeFiles/fresh_short.dir/rule:
+	cd /home/rokon/renew/build && $(MAKE) -f CMakeFiles/Makefile2 unit/CMakeFiles/fresh_short.dir/rule
+.PHONY : unit/CMakeFiles/fresh_short.dir/rule
+
+# Convenience name for target.
+fresh_short: unit/CMakeFiles/fresh_short.dir/rule
+.PHONY : fresh_short
+
+# fast build rule for target.
+fresh_short/fast:
+	cd /home/rokon/renew/build && $(MAKE) -f unit/CMakeFiles/fresh_short.dir/build.make unit/CMakeFiles/fresh_short.dir/build
+.PHONY : fresh_short/fast
+
+# Convenience name for target.
+unit/CMakeFiles/fresh_working.dir/rule:
+	cd /home/rokon/renew/build && $(MAKE) -f CMakeFiles/Makefile2 unit/CMakeFiles/fresh_working.dir/rule
+.PHONY : unit/CMakeFiles/fresh_working.dir/rule
+
+# Convenience name for target.
+fresh_working: unit/CMakeFiles/fresh_working.dir/rule
+.PHONY : fresh_working
+
+# fast build rule for target.
+fresh_working/fast:
+	cd /home/rokon/renew/build && $(MAKE) -f unit/CMakeFiles/fresh_working.dir/build.make unit/CMakeFiles/fresh_working.dir/build
+.PHONY : fresh_working/fast
+
+# Convenience name for target.
 unit/CMakeFiles/sim.dir/rule:
 	cd /home/rokon/renew/build && $(MAKE) -f CMakeFiles/Makefile2 unit/CMakeFiles/sim.dir/rule
 .PHONY : unit/CMakeFiles/sim.dir/rule
@@ -218,6 +246,20 @@ sim: unit/CMakeFiles/sim.dir/rule
 sim/fast:
 	cd /home/rokon/renew/build && $(MAKE) -f unit/CMakeFiles/sim.dir/build.make unit/CMakeFiles/sim.dir/build
 .PHONY : sim/fast
+
+# Convenience name for target.
+unit/CMakeFiles/single_working.dir/rule:
+	cd /home/rokon/renew/build && $(MAKE) -f CMakeFiles/Makefile2 unit/CMakeFiles/single_working.dir/rule
+.PHONY : unit/CMakeFiles/single_working.dir/rule
+
+# Convenience name for target.
+single_working: unit/CMakeFiles/single_working.dir/rule
+.PHONY : single_working
+
+# fast build rule for target.
+single_working/fast:
+	cd /home/rokon/renew/build && $(MAKE) -f unit/CMakeFiles/single_working.dir/build.make unit/CMakeFiles/single_working.dir/build
+.PHONY : single_working/fast
 
 # Convenience name for target.
 unit/CMakeFiles/unit.dir/rule:
@@ -427,6 +469,30 @@ fresh_pbp.cpp.s:
 	cd /home/rokon/renew/build && $(MAKE) -f unit/CMakeFiles/fresh_pbp.dir/build.make unit/CMakeFiles/fresh_pbp.dir/fresh_pbp.cpp.s
 .PHONY : fresh_pbp.cpp.s
 
+fresh_shorter.o: fresh_shorter.cpp.o
+.PHONY : fresh_shorter.o
+
+# target to build an object file
+fresh_shorter.cpp.o:
+	cd /home/rokon/renew/build && $(MAKE) -f unit/CMakeFiles/fresh_short.dir/build.make unit/CMakeFiles/fresh_short.dir/fresh_shorter.cpp.o
+.PHONY : fresh_shorter.cpp.o
+
+fresh_shorter.i: fresh_shorter.cpp.i
+.PHONY : fresh_shorter.i
+
+# target to preprocess a source file
+fresh_shorter.cpp.i:
+	cd /home/rokon/renew/build && $(MAKE) -f unit/CMakeFiles/fresh_short.dir/build.make unit/CMakeFiles/fresh_short.dir/fresh_shorter.cpp.i
+.PHONY : fresh_shorter.cpp.i
+
+fresh_shorter.s: fresh_shorter.cpp.s
+.PHONY : fresh_shorter.s
+
+# target to generate assembly for a file
+fresh_shorter.cpp.s:
+	cd /home/rokon/renew/build && $(MAKE) -f unit/CMakeFiles/fresh_short.dir/build.make unit/CMakeFiles/fresh_short.dir/fresh_shorter.cpp.s
+.PHONY : fresh_shorter.cpp.s
+
 new_sim.o: new_sim.cpp.o
 .PHONY : new_sim.o
 
@@ -450,6 +516,30 @@ new_sim.s: new_sim.cpp.s
 new_sim.cpp.s:
 	cd /home/rokon/renew/build && $(MAKE) -f unit/CMakeFiles/sim.dir/build.make unit/CMakeFiles/sim.dir/new_sim.cpp.s
 .PHONY : new_sim.cpp.s
+
+single_workin_y.o: single_workin_y.cpp.o
+.PHONY : single_workin_y.o
+
+# target to build an object file
+single_workin_y.cpp.o:
+	cd /home/rokon/renew/build && $(MAKE) -f unit/CMakeFiles/single_working.dir/build.make unit/CMakeFiles/single_working.dir/single_workin_y.cpp.o
+.PHONY : single_workin_y.cpp.o
+
+single_workin_y.i: single_workin_y.cpp.i
+.PHONY : single_workin_y.i
+
+# target to preprocess a source file
+single_workin_y.cpp.i:
+	cd /home/rokon/renew/build && $(MAKE) -f unit/CMakeFiles/single_working.dir/build.make unit/CMakeFiles/single_working.dir/single_workin_y.cpp.i
+.PHONY : single_workin_y.cpp.i
+
+single_workin_y.s: single_workin_y.cpp.s
+.PHONY : single_workin_y.s
+
+# target to generate assembly for a file
+single_workin_y.cpp.s:
+	cd /home/rokon/renew/build && $(MAKE) -f unit/CMakeFiles/single_working.dir/build.make unit/CMakeFiles/single_working.dir/single_workin_y.cpp.s
+.PHONY : single_workin_y.cpp.s
 
 unit_working.o: unit_working.cpp.o
 .PHONY : unit_working.o
@@ -475,6 +565,30 @@ unit_working.cpp.s:
 	cd /home/rokon/renew/build && $(MAKE) -f unit/CMakeFiles/unit.dir/build.make unit/CMakeFiles/unit.dir/unit_working.cpp.s
 .PHONY : unit_working.cpp.s
 
+working_rel_double.o: working_rel_double.cpp.o
+.PHONY : working_rel_double.o
+
+# target to build an object file
+working_rel_double.cpp.o:
+	cd /home/rokon/renew/build && $(MAKE) -f unit/CMakeFiles/fresh_working.dir/build.make unit/CMakeFiles/fresh_working.dir/working_rel_double.cpp.o
+.PHONY : working_rel_double.cpp.o
+
+working_rel_double.i: working_rel_double.cpp.i
+.PHONY : working_rel_double.i
+
+# target to preprocess a source file
+working_rel_double.cpp.i:
+	cd /home/rokon/renew/build && $(MAKE) -f unit/CMakeFiles/fresh_working.dir/build.make unit/CMakeFiles/fresh_working.dir/working_rel_double.cpp.i
+.PHONY : working_rel_double.cpp.i
+
+working_rel_double.s: working_rel_double.cpp.s
+.PHONY : working_rel_double.s
+
+# target to generate assembly for a file
+working_rel_double.cpp.s:
+	cd /home/rokon/renew/build && $(MAKE) -f unit/CMakeFiles/fresh_working.dir/build.make unit/CMakeFiles/fresh_working.dir/working_rel_double.cpp.s
+.PHONY : working_rel_double.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -486,12 +600,15 @@ help:
 	@echo "... fresh"
 	@echo "... fresh_again"
 	@echo "... fresh_pbp"
+	@echo "... fresh_short"
+	@echo "... fresh_working"
 	@echo "... install"
 	@echo "... install/local"
 	@echo "... install/strip"
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
 	@echo "... sim"
+	@echo "... single_working"
 	@echo "... test"
 	@echo "... unit"
 	@echo "... unit_gencpp"
@@ -513,12 +630,21 @@ help:
 	@echo "... fresh_pbp.o"
 	@echo "... fresh_pbp.i"
 	@echo "... fresh_pbp.s"
+	@echo "... fresh_shorter.o"
+	@echo "... fresh_shorter.i"
+	@echo "... fresh_shorter.s"
 	@echo "... new_sim.o"
 	@echo "... new_sim.i"
 	@echo "... new_sim.s"
+	@echo "... single_workin_y.o"
+	@echo "... single_workin_y.i"
+	@echo "... single_workin_y.s"
 	@echo "... unit_working.o"
 	@echo "... unit_working.i"
 	@echo "... unit_working.s"
+	@echo "... working_rel_double.o"
+	@echo "... working_rel_double.i"
+	@echo "... working_rel_double.s"
 .PHONY : help
 
 

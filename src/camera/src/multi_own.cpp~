@@ -223,26 +223,26 @@ int main(int argc, char **argv)
 	green.window = "green_window";
 	blue.window = "blue_window";
 
-	red.iLowH= 114;
+	red.iLowH= 142;
 	red.iHighH = 179 ;
 	red.iLowS = 142;
 	red.iHighS= 224;
 	red.iLowV = 58;
 	red.iHighV = 255;
 
-	blue.iLowH= 69;
-	blue.iHighH = 167 ;
-	blue.iLowS = 63;
-	blue.iHighS= 218;
-	blue.iLowV = 16 ;
-	blue.iHighV = 103;
+	blue.iLowH= 61;
+	blue.iHighH = 130 ;
+	blue.iLowS = 86;
+	blue.iHighS= 246;
+	blue.iLowV = 57 ;
+	blue.iHighV = 255;
 
 	green.iLowH= 32;
-	green.iHighH = 42 ;
+	green.iHighH = 60 ;
 	green.iLowS = 11;
 	green.iHighS= 255;
-	green.iLowV = 2 ;
-	green.iHighV = 104;
+	green.iLowV = 69 ;
+	green.iHighV = 140;
 	
 	
 	

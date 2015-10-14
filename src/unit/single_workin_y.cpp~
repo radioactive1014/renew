@@ -237,7 +237,7 @@ void robot(int com)
 	odeJointSetHingeParam(mainLink.joint,dParamFMax,dInfinity);
 	odeJointSetHingeParam(mainLink.joint,dParamVel,control);
 
-	stepOde(0);
+	stepOde(1);
 	saveOdeState(0);
 
 
@@ -248,7 +248,7 @@ void robot(int com)
 	
 	//float rel1 =  odeBodyGetPosRelPoint( stage.body, pos1[0], pos1[1], pos1[2]);
 	//printf("rel  %f \n", rel1);
-	printf("FINAL Posx %1.3f,posz = %f  angle %1.3f, cost=%1.3f, control %f \n",pos1[1],pos1[2],angle1*180/3.1416,cost,control);
+	printf("FINAL Posx %1.3f,posy = %f  angle %1.3f, cost=%1.3f, control %f \n",pos1[0],pos1[1],angle1*180/3.1416,cost,control);
 
 	/*	
 	int j = 0;
