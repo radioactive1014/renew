@@ -579,6 +579,45 @@ fresh_again/fast:
 .PHONY : fresh_again/fast
 
 #=============================================================================
+# Target rules for targets named fresh_double
+
+# Build rule for target.
+fresh_double: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 fresh_double
+.PHONY : fresh_double
+
+# fast build rule for target.
+fresh_double/fast:
+	$(MAKE) -f unit/CMakeFiles/fresh_double.dir/build.make unit/CMakeFiles/fresh_double.dir/build
+.PHONY : fresh_double/fast
+
+#=============================================================================
+# Target rules for targets named fresh_double_short
+
+# Build rule for target.
+fresh_double_short: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 fresh_double_short
+.PHONY : fresh_double_short
+
+# fast build rule for target.
+fresh_double_short/fast:
+	$(MAKE) -f unit/CMakeFiles/fresh_double_short.dir/build.make unit/CMakeFiles/fresh_double_short.dir/build
+.PHONY : fresh_double_short/fast
+
+#=============================================================================
+# Target rules for targets named fresh_feedback
+
+# Build rule for target.
+fresh_feedback: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 fresh_feedback
+.PHONY : fresh_feedback
+
+# fast build rule for target.
+fresh_feedback/fast:
+	$(MAKE) -f unit/CMakeFiles/fresh_feedback.dir/build.make unit/CMakeFiles/fresh_feedback.dir/build
+.PHONY : fresh_feedback/fast
+
+#=============================================================================
 # Target rules for targets named fresh_pbp
 
 # Build rule for target.
@@ -590,6 +629,19 @@ fresh_pbp: cmake_check_build_system
 fresh_pbp/fast:
 	$(MAKE) -f unit/CMakeFiles/fresh_pbp.dir/build.make unit/CMakeFiles/fresh_pbp.dir/build
 .PHONY : fresh_pbp/fast
+
+#=============================================================================
+# Target rules for targets named fresh_rolling
+
+# Build rule for target.
+fresh_rolling: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 fresh_rolling
+.PHONY : fresh_rolling
+
+# fast build rule for target.
+fresh_rolling/fast:
+	$(MAKE) -f unit/CMakeFiles/fresh_rolling.dir/build.make unit/CMakeFiles/fresh_rolling.dir/build
+.PHONY : fresh_rolling/fast
 
 #=============================================================================
 # Target rules for targets named fresh_short
@@ -806,7 +858,11 @@ help:
 	@echo "... collision"
 	@echo "... fresh"
 	@echo "... fresh_again"
+	@echo "... fresh_double"
+	@echo "... fresh_double_short"
+	@echo "... fresh_feedback"
 	@echo "... fresh_pbp"
+	@echo "... fresh_rolling"
 	@echo "... fresh_short"
 	@echo "... fresh_working"
 	@echo "... sim"

@@ -30,17 +30,17 @@ float h_support = 0.165f ;
 float stage_dim[3]= {0.4f, 0.4f, 0.05f };
 
 
-const int nSamples=25;
+const int nSamples=40;
 //physics simulation time step
 float timeStep=1.0f/100.0f;
 
 
 ControlPBP pbp;
-int nTimeSteps=12;		
+int nTimeSteps=15;		
 const int nStateDimensions=2;
 const int nControlDimensions=1;
-float minControl=-3.5;	//lower sampling bound
-float maxControl=3.5;	//upper sampling bound
+float minControl=-1.5;	//lower sampling bound
+float maxControl=1.5;	//upper sampling bound
 float controlMean=0;	//we're using torque as the control, makes sense to have zero mean
 //Square root of the diagonal elements of C_u in the paper, i.e., stdev of a Gaussian prior for control.
 //Note that the optimizer interface does not have the C_u as a parameter, and instead uses meand and stdev arrays as parameters.
@@ -100,12 +100,12 @@ void robot(int com)
 	restoreOdeState(0);
 
 	const dReal *pos = odeBodyGetPosition(ball.body);
-	float angle=odeJointGetHingeAngle(LinkBall.joint);
+	float angle=odeJointGetHingeAngle(mainLink.joint);
 	//printf("position befor simulate forward %f \n", pos[1]);
 	//float rel =  odeBodyGetPosRelPoint( stage.body, pos_b[0], pos_b[1], pos_b[2]);
 
 
-	float stateVector[2]={pos[0],angle};
+	float stateVector[2]={pos[1],angle};
 	pbp.startIteration(true,stateVector);
 
 	
@@ -134,7 +134,7 @@ void robot(int com)
 			restoreOdeState(previousStateIdx+1); 
 
 			const dReal *pos = odeBodyGetPosition(ball.body);
-			float angle=odeJointGetHingeAngle(LinkBall.joint);
+			float angle=odeJointGetHingeAngle(mainLink.joint);
 			//printf("before position %f and angle %f \n", pos[1],angle);
 			dReal Gain = 1;
 			dReal MaxForce = dInfinity;
@@ -150,8 +150,8 @@ void robot(int com)
 			dReal DesiredVelocity = -Error * Gain;
 			//printf("des vel %f \n", DesiredVelocity);
 
-			odeJointSetHingeParam(LinkBall.joint, dParamFMax, MaxForce);
-			odeJointSetHingeParam(LinkBall.joint, dParamVel,control );
+			odeJointSetHingeParam(mainLink.joint, dParamFMax, MaxForce);
+			odeJointSetHingeParam(mainLink.joint, dParamVel,control );
 
 
 
@@ -167,7 +167,7 @@ void robot(int com)
 			stepOde(1);
 		
 			pos = odeBodyGetPosition(ball.body);
-			angle=odeJointGetHingeAngle(LinkBall.joint);
+			angle=odeJointGetHingeAngle(mainLink.joint);
 			//printf("control %f \n",control);
 			//printf("after position %f and angle %f \n", pos[1],angle);
 		
@@ -175,7 +175,7 @@ void robot(int com)
 			//float rel =  odeBodyGetPosRelPoint( stage.body, pos[0], pos[1], pos[2]);
 			//printf("rel  %f \n", rel);
 
-			float cost=squared((pos[0])*20.0f);//+ squared(angle*30.0f) ;
+			float cost=squared((pos[1])*10.0f)+ squared(angle*4.0f) ;
 			//printf("before position %f \n", pos_b[0]);
 
 			//printf(" in sample %d: cost %f   \n",i,cost );
@@ -186,7 +186,7 @@ void robot(int com)
 
 			//store the state and cost to C-PBP. Note that in general, the stored state does not need to contain full simulation state as 					in this simple case.
 			//instead, one may use arbitrary state features
-			float stateVector[2]={pos[0],angle};
+			float stateVector[2]={pos[1],angle};
 			pbp.updateResults(i,&control,stateVector,cost);
 
 
@@ -227,8 +227,8 @@ void robot(int com)
 
 	dReal DesiredVelocity = -Error * Gain;
 
-	odeJointSetHingeParam(LinkBall.joint,dParamFMax,dInfinity);
-	odeJointSetHingeParam(LinkBall.joint,dParamVel,control);
+	odeJointSetHingeParam(mainLink.joint,dParamFMax,dInfinity);
+	odeJointSetHingeParam(mainLink.joint,dParamVel,control);
 
 	stepOde(0);
 	saveOdeState(0);
@@ -236,19 +236,19 @@ void robot(int com)
 
 	
 	 const dReal *pos1 = odeBodyGetPosition(ball.body);
-	 float angle1=odeJointGetHingeAngle(LinkBall.joint);
+	 float angle1=odeJointGetHingeAngle(mainLink.joint);
 
 	
 	//float rel1 =  odeBodyGetPosRelPoint( stage.body, pos1[0], pos1[1], pos1[2]);
 	//printf("rel  %f \n", rel1);
-	printf("FINAL Posx %1.3f,posz = %f  angle %1.3f, cost=%1.3f, control %f \n",pos1[0],pos1[2],angle1*180/3.1416,cost,control);
+	printf("FINAL Posx %1.3f,posz = %f  angle %1.3f, cost=%1.3f, control %f \n",pos1[1],pos1[2],angle1*180/3.1416,cost,control);
 
-	///*	
+	/*	
 	int j = 0;
 	loop : std::cin >> j;
 	if ( j != 1)
 	goto loop;
-	//*/
+	*/
 }
 
 
@@ -334,8 +334,8 @@ int main(int argc, char **argv)
 	
 	ball.body = odeBodyCreate();
 	ball.geom = odeCreateSphere( ball.radius); 
-	odeMassSetSphereTotal(ball.body, 0.04,ball.radius); 
-	odeBodySetPosition(ball.body,0.08,0,h_floor_table +h_base+h_sphere+h_support+stage_dim[2]);
+	odeMassSetSphereTotal(ball.body, 0.046,ball.radius); 
+	odeBodySetPosition(ball.body,0.00,0.1,h_floor_table +h_base+h_sphere+h_support+stage_dim[2]+ball.radius/2);
 	odeGeomSetBody(ball.geom,ball.body);
 	printf("ball body id %f, geom id %f \n", ball.body, ball.geom);	
 
@@ -347,7 +347,7 @@ int main(int argc, char **argv)
 	mainLink.joint =odeJointCreateHinge();
 	odeJointAttach(mainLink.joint,mainLink.body,0);
 	//odeJointSetHingeAnchor(capsule2.joint[0],-0.5,0,0.60);
-	odeJointSetHingeAxis(mainLink.joint,0,0,1);
+	odeJointSetHingeAxis(mainLink.joint,1,0,0);
 
 
 
@@ -356,7 +356,7 @@ int main(int argc, char **argv)
 	LinkBall.joint =odeJointCreateHinge();
 	odeJointAttach(LinkBall.joint,LinkBall.body,mainLink.body);
 	//odeJointSetHingeAnchor(capsule3.joint[1],-1.1,0.5,0.60);
-	odeJointSetHingeAxis(LinkBall.joint,0,1,0);
+	odeJointSetHingeAxis(LinkBall.joint,0,0,1);
 	//LinkBall.joint_extra =odeJointCreateFixed();
 	//odeJointSetHingeParam(LinkBall.joint,dParamHiStop,0.5);
 	//odeJointSetHingeParam(LinkBall.joint,dParamLoStop,-0.1);

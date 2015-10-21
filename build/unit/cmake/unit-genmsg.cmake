@@ -1,6 +1,6 @@
 # generated from genmsg/cmake/pkg-genmsg.cmake.em
 
-message(STATUS "unit: 0 messages, 2 services")
+message(STATUS "unit: 0 messages, 3 services")
 
 set(MSG_I_FLAGS "-Istd_msgs:/opt/ros/groovy/share/std_msgs/cmake/../msg")
 
@@ -21,6 +21,12 @@ add_custom_target(unit_generate_messages ALL)
 ### Generating Services
 _generate_srv_cpp(unit
   "/home/rokon/renew/src/unit/srv/for_double.srv"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/unit
+)
+_generate_srv_cpp(unit
+  "/home/rokon/renew/src/unit/srv/for_feedback.srv"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/unit
@@ -61,6 +67,12 @@ _generate_srv_lisp(unit
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/unit
 )
 _generate_srv_lisp(unit
+  "/home/rokon/renew/src/unit/srv/for_feedback.srv"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/unit
+)
+_generate_srv_lisp(unit
   "/home/rokon/renew/src/unit/srv/from_robot.srv"
   "${MSG_I_FLAGS}"
   ""
@@ -91,6 +103,12 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS unit_generate_messages_lisp)
 ### Generating Services
 _generate_srv_py(unit
   "/home/rokon/renew/src/unit/srv/for_double.srv"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/unit
+)
+_generate_srv_py(unit
+  "/home/rokon/renew/src/unit/srv/for_feedback.srv"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/unit

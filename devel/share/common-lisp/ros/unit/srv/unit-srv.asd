@@ -8,4 +8,6 @@
     (:file "_package_for_double" :depends-on ("_package"))
     (:file "from_robot" :depends-on ("_package_from_robot"))
     (:file "_package_from_robot" :depends-on ("_package"))
+    (:file "for_feedback" :depends-on ("_package_for_feedback"))
+    (:file "_package_for_feedback" :depends-on ("_package"))
   ))

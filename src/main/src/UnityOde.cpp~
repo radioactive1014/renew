@@ -99,13 +99,14 @@ static void nearCallback (void *data, dGeomID o1, dGeomID o2)
 			//	contact[i].surface.mode |= dContactSoftCFM;
 			//	contact[i].surface.soft_cfm = context->contactSoftCFM;//1e-10;
 			//}
-			contact[i].surface.mode = dContactApprox1|dContactSoftERP|dContactSoftCFM;
-			contact[i].surface.mu = .1;//context->frictionCoefficient;//200;
-			//contact[i].surface.slip1 = 0.001f;
-			//contact[i].surface.slip2 = 0.001f;
-			contact[i].surface.bounce = 0.001f;
-			contact[i].surface.soft_erp = 0.2;
-			contact[i].surface.soft_cfm =0 ;//1e-1;
+			contact[i].surface.mode = dContactApprox1|dContactSoftERP|dContactSoftCFM|dContactSlip1 | dContactSlip2  ;
+			contact[i].surface.mu = dInfinity;//context->frictionCoefficient;//200;
+			contact[i].surface.slip1 = 0.001f;
+			contact[i].surface.slip2 = 0.001f;
+			contact[i].surface.bounce = 5.0f;
+			contact[i].surface.soft_erp = 1;
+			contact[i].surface.soft_cfm =0.3;
+			
 
 			dJointID c = dJointCreateContact (context->world,context->contactGroup,&contact[i]);
 			
@@ -493,6 +494,8 @@ void odeBodyAddForce(int bodyId, ConstOdeVector f)
 		dBodyAddForce(body, f[0], f[1], f[2]);
 	}
 }
+
+/*
 void odeBodyAddTorque(int bodyId, ConstOdeVector f)
 {
 	ITERATE_THREADS(threadIdx)
@@ -502,6 +505,22 @@ void odeBodyAddTorque(int bodyId, ConstOdeVector f)
 		dBodyAddTorque(body, f[0], f[1], f[2]);
 	}
 }
+*/
+
+////////////////////by mee
+
+void odeBodyAddTorque(int bodyId, std::vector<float> f)
+{
+	ITERATE_THREADS(threadIdx)
+	{
+		OdeThreadContext & c=contexts[threadIdx];
+		dBodyID body=c.bodies[bodyId];
+		dBodyAddTorque(body, f[0], f[1], f[2]);
+	}
+}
+
+
+//////////////
 void odeBodyAddRelForce(int bodyId, ConstOdeVector f)
 {
 	ITERATE_THREADS(threadIdx)
@@ -1603,7 +1622,7 @@ void odeJointAddAMotorTorques(int jointId, float torque1, float torque2, float t
 //bool EXPORT_API stepOde(float stepSize, bool breakOnErrors)
 void EXPORT_API stepOde(int com)
 {
-	float stepSize = 1.0f/30.0f;
+	float stepSize = 1.0f/24.0f;
 
 	bool isError = false;
 
@@ -1693,6 +1712,7 @@ void EXPORT_API stepOde(int com)
 		//dsDrawCapsule( dBodyGetPosition(c.bodies[9]),dBodyGetRotation(c.bodies[9]),0.60-0.05,0.05f);
 
 		//dsDrawCapsule( dBodyGetPosition(c.bodies[11]),dBodyGetRotation(c.bodies[11]),1.17-0.05,0.05f);
+		dsSetColor(1.0,0.0,0.0);
 		dsDrawSphere( dBodyGetPosition(c.bodies[9]),dBodyGetRotation(c.bodies[9]),0.03f);
 		//dsDrawSphere( dBodyGetPosition(c.bodies[15]),dBodyGetRotation(c.bodies[15]),0.03f);
 

@@ -192,6 +192,48 @@ fresh_again/fast:
 .PHONY : fresh_again/fast
 
 # Convenience name for target.
+unit/CMakeFiles/fresh_double.dir/rule:
+	cd /home/rokon/renew/build && $(MAKE) -f CMakeFiles/Makefile2 unit/CMakeFiles/fresh_double.dir/rule
+.PHONY : unit/CMakeFiles/fresh_double.dir/rule
+
+# Convenience name for target.
+fresh_double: unit/CMakeFiles/fresh_double.dir/rule
+.PHONY : fresh_double
+
+# fast build rule for target.
+fresh_double/fast:
+	cd /home/rokon/renew/build && $(MAKE) -f unit/CMakeFiles/fresh_double.dir/build.make unit/CMakeFiles/fresh_double.dir/build
+.PHONY : fresh_double/fast
+
+# Convenience name for target.
+unit/CMakeFiles/fresh_double_short.dir/rule:
+	cd /home/rokon/renew/build && $(MAKE) -f CMakeFiles/Makefile2 unit/CMakeFiles/fresh_double_short.dir/rule
+.PHONY : unit/CMakeFiles/fresh_double_short.dir/rule
+
+# Convenience name for target.
+fresh_double_short: unit/CMakeFiles/fresh_double_short.dir/rule
+.PHONY : fresh_double_short
+
+# fast build rule for target.
+fresh_double_short/fast:
+	cd /home/rokon/renew/build && $(MAKE) -f unit/CMakeFiles/fresh_double_short.dir/build.make unit/CMakeFiles/fresh_double_short.dir/build
+.PHONY : fresh_double_short/fast
+
+# Convenience name for target.
+unit/CMakeFiles/fresh_feedback.dir/rule:
+	cd /home/rokon/renew/build && $(MAKE) -f CMakeFiles/Makefile2 unit/CMakeFiles/fresh_feedback.dir/rule
+.PHONY : unit/CMakeFiles/fresh_feedback.dir/rule
+
+# Convenience name for target.
+fresh_feedback: unit/CMakeFiles/fresh_feedback.dir/rule
+.PHONY : fresh_feedback
+
+# fast build rule for target.
+fresh_feedback/fast:
+	cd /home/rokon/renew/build && $(MAKE) -f unit/CMakeFiles/fresh_feedback.dir/build.make unit/CMakeFiles/fresh_feedback.dir/build
+.PHONY : fresh_feedback/fast
+
+# Convenience name for target.
 unit/CMakeFiles/fresh_pbp.dir/rule:
 	cd /home/rokon/renew/build && $(MAKE) -f CMakeFiles/Makefile2 unit/CMakeFiles/fresh_pbp.dir/rule
 .PHONY : unit/CMakeFiles/fresh_pbp.dir/rule
@@ -204,6 +246,20 @@ fresh_pbp: unit/CMakeFiles/fresh_pbp.dir/rule
 fresh_pbp/fast:
 	cd /home/rokon/renew/build && $(MAKE) -f unit/CMakeFiles/fresh_pbp.dir/build.make unit/CMakeFiles/fresh_pbp.dir/build
 .PHONY : fresh_pbp/fast
+
+# Convenience name for target.
+unit/CMakeFiles/fresh_rolling.dir/rule:
+	cd /home/rokon/renew/build && $(MAKE) -f CMakeFiles/Makefile2 unit/CMakeFiles/fresh_rolling.dir/rule
+.PHONY : unit/CMakeFiles/fresh_rolling.dir/rule
+
+# Convenience name for target.
+fresh_rolling: unit/CMakeFiles/fresh_rolling.dir/rule
+.PHONY : fresh_rolling
+
+# fast build rule for target.
+fresh_rolling/fast:
+	cd /home/rokon/renew/build && $(MAKE) -f unit/CMakeFiles/fresh_rolling.dir/build.make unit/CMakeFiles/fresh_rolling.dir/build
+.PHONY : fresh_rolling/fast
 
 # Convenience name for target.
 unit/CMakeFiles/fresh_short.dir/rule:
@@ -445,6 +501,54 @@ fresh_again.cpp.s:
 	cd /home/rokon/renew/build && $(MAKE) -f unit/CMakeFiles/fresh_again.dir/build.make unit/CMakeFiles/fresh_again.dir/fresh_again.cpp.s
 .PHONY : fresh_again.cpp.s
 
+fresh_double.o: fresh_double.cpp.o
+.PHONY : fresh_double.o
+
+# target to build an object file
+fresh_double.cpp.o:
+	cd /home/rokon/renew/build && $(MAKE) -f unit/CMakeFiles/fresh_double.dir/build.make unit/CMakeFiles/fresh_double.dir/fresh_double.cpp.o
+.PHONY : fresh_double.cpp.o
+
+fresh_double.i: fresh_double.cpp.i
+.PHONY : fresh_double.i
+
+# target to preprocess a source file
+fresh_double.cpp.i:
+	cd /home/rokon/renew/build && $(MAKE) -f unit/CMakeFiles/fresh_double.dir/build.make unit/CMakeFiles/fresh_double.dir/fresh_double.cpp.i
+.PHONY : fresh_double.cpp.i
+
+fresh_double.s: fresh_double.cpp.s
+.PHONY : fresh_double.s
+
+# target to generate assembly for a file
+fresh_double.cpp.s:
+	cd /home/rokon/renew/build && $(MAKE) -f unit/CMakeFiles/fresh_double.dir/build.make unit/CMakeFiles/fresh_double.dir/fresh_double.cpp.s
+.PHONY : fresh_double.cpp.s
+
+fresh_feedback.o: fresh_feedback.cpp.o
+.PHONY : fresh_feedback.o
+
+# target to build an object file
+fresh_feedback.cpp.o:
+	cd /home/rokon/renew/build && $(MAKE) -f unit/CMakeFiles/fresh_feedback.dir/build.make unit/CMakeFiles/fresh_feedback.dir/fresh_feedback.cpp.o
+.PHONY : fresh_feedback.cpp.o
+
+fresh_feedback.i: fresh_feedback.cpp.i
+.PHONY : fresh_feedback.i
+
+# target to preprocess a source file
+fresh_feedback.cpp.i:
+	cd /home/rokon/renew/build && $(MAKE) -f unit/CMakeFiles/fresh_feedback.dir/build.make unit/CMakeFiles/fresh_feedback.dir/fresh_feedback.cpp.i
+.PHONY : fresh_feedback.cpp.i
+
+fresh_feedback.s: fresh_feedback.cpp.s
+.PHONY : fresh_feedback.s
+
+# target to generate assembly for a file
+fresh_feedback.cpp.s:
+	cd /home/rokon/renew/build && $(MAKE) -f unit/CMakeFiles/fresh_feedback.dir/build.make unit/CMakeFiles/fresh_feedback.dir/fresh_feedback.cpp.s
+.PHONY : fresh_feedback.cpp.s
+
 fresh_pbp.o: fresh_pbp.cpp.o
 .PHONY : fresh_pbp.o
 
@@ -468,6 +572,30 @@ fresh_pbp.s: fresh_pbp.cpp.s
 fresh_pbp.cpp.s:
 	cd /home/rokon/renew/build && $(MAKE) -f unit/CMakeFiles/fresh_pbp.dir/build.make unit/CMakeFiles/fresh_pbp.dir/fresh_pbp.cpp.s
 .PHONY : fresh_pbp.cpp.s
+
+fresh_rolling.o: fresh_rolling.cpp.o
+.PHONY : fresh_rolling.o
+
+# target to build an object file
+fresh_rolling.cpp.o:
+	cd /home/rokon/renew/build && $(MAKE) -f unit/CMakeFiles/fresh_rolling.dir/build.make unit/CMakeFiles/fresh_rolling.dir/fresh_rolling.cpp.o
+.PHONY : fresh_rolling.cpp.o
+
+fresh_rolling.i: fresh_rolling.cpp.i
+.PHONY : fresh_rolling.i
+
+# target to preprocess a source file
+fresh_rolling.cpp.i:
+	cd /home/rokon/renew/build && $(MAKE) -f unit/CMakeFiles/fresh_rolling.dir/build.make unit/CMakeFiles/fresh_rolling.dir/fresh_rolling.cpp.i
+.PHONY : fresh_rolling.cpp.i
+
+fresh_rolling.s: fresh_rolling.cpp.s
+.PHONY : fresh_rolling.s
+
+# target to generate assembly for a file
+fresh_rolling.cpp.s:
+	cd /home/rokon/renew/build && $(MAKE) -f unit/CMakeFiles/fresh_rolling.dir/build.make unit/CMakeFiles/fresh_rolling.dir/fresh_rolling.cpp.s
+.PHONY : fresh_rolling.cpp.s
 
 fresh_shorter.o: fresh_shorter.cpp.o
 .PHONY : fresh_shorter.o
@@ -565,6 +693,30 @@ unit_working.cpp.s:
 	cd /home/rokon/renew/build && $(MAKE) -f unit/CMakeFiles/unit.dir/build.make unit/CMakeFiles/unit.dir/unit_working.cpp.s
 .PHONY : unit_working.cpp.s
 
+working_double_shorter.o: working_double_shorter.cpp.o
+.PHONY : working_double_shorter.o
+
+# target to build an object file
+working_double_shorter.cpp.o:
+	cd /home/rokon/renew/build && $(MAKE) -f unit/CMakeFiles/fresh_double_short.dir/build.make unit/CMakeFiles/fresh_double_short.dir/working_double_shorter.cpp.o
+.PHONY : working_double_shorter.cpp.o
+
+working_double_shorter.i: working_double_shorter.cpp.i
+.PHONY : working_double_shorter.i
+
+# target to preprocess a source file
+working_double_shorter.cpp.i:
+	cd /home/rokon/renew/build && $(MAKE) -f unit/CMakeFiles/fresh_double_short.dir/build.make unit/CMakeFiles/fresh_double_short.dir/working_double_shorter.cpp.i
+.PHONY : working_double_shorter.cpp.i
+
+working_double_shorter.s: working_double_shorter.cpp.s
+.PHONY : working_double_shorter.s
+
+# target to generate assembly for a file
+working_double_shorter.cpp.s:
+	cd /home/rokon/renew/build && $(MAKE) -f unit/CMakeFiles/fresh_double_short.dir/build.make unit/CMakeFiles/fresh_double_short.dir/working_double_shorter.cpp.s
+.PHONY : working_double_shorter.cpp.s
+
 working_rel_double.o: working_rel_double.cpp.o
 .PHONY : working_rel_double.o
 
@@ -599,7 +751,11 @@ help:
 	@echo "... edit_cache"
 	@echo "... fresh"
 	@echo "... fresh_again"
+	@echo "... fresh_double"
+	@echo "... fresh_double_short"
+	@echo "... fresh_feedback"
 	@echo "... fresh_pbp"
+	@echo "... fresh_rolling"
 	@echo "... fresh_short"
 	@echo "... fresh_working"
 	@echo "... install"
@@ -627,9 +783,18 @@ help:
 	@echo "... fresh_again.o"
 	@echo "... fresh_again.i"
 	@echo "... fresh_again.s"
+	@echo "... fresh_double.o"
+	@echo "... fresh_double.i"
+	@echo "... fresh_double.s"
+	@echo "... fresh_feedback.o"
+	@echo "... fresh_feedback.i"
+	@echo "... fresh_feedback.s"
 	@echo "... fresh_pbp.o"
 	@echo "... fresh_pbp.i"
 	@echo "... fresh_pbp.s"
+	@echo "... fresh_rolling.o"
+	@echo "... fresh_rolling.i"
+	@echo "... fresh_rolling.s"
 	@echo "... fresh_shorter.o"
 	@echo "... fresh_shorter.i"
 	@echo "... fresh_shorter.s"
@@ -642,6 +807,9 @@ help:
 	@echo "... unit_working.o"
 	@echo "... unit_working.i"
 	@echo "... unit_working.s"
+	@echo "... working_double_shorter.o"
+	@echo "... working_double_shorter.i"
+	@echo "... working_double_shorter.s"
 	@echo "... working_rel_double.o"
 	@echo "... working_rel_double.i"
 	@echo "... working_rel_double.s"

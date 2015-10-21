@@ -106,7 +106,11 @@ void EXPORT_API odeBodySetMass(int bodyId, float mass);
 float EXPORT_API odeBodyGetMass(int bodyId);
 
 EXPORT_API void odeBodyAddForce(int bodyId, ConstOdeVector f);
-EXPORT_API void odeBodyAddTorque(int bodyId, ConstOdeVector f);
+//EXPORT_API void odeBodyAddTorque(int bodyId, ConstOdeVector f);
+
+EXPORT_API void odeBodyAddTorque(int bodyId, std::vector<float> f);
+
+
 EXPORT_API void odeBodyAddRelForce(int bodyId, ConstOdeVector f);
 EXPORT_API void odeBodyAddRelTorque(int bodyId, ConstOdeVector f);
 EXPORT_API void odeBodyAddForceAtPos(int bodyId, ConstOdeVector f, ConstOdeVector p);

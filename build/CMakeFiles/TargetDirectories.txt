@@ -10,7 +10,11 @@
 /home/rokon/renew/build/CMakeFiles/doxygen.dir
 /home/rokon/renew/build/unit/CMakeFiles/fresh.dir
 /home/rokon/renew/build/unit/CMakeFiles/fresh_again.dir
+/home/rokon/renew/build/unit/CMakeFiles/fresh_double.dir
+/home/rokon/renew/build/unit/CMakeFiles/fresh_double_short.dir
+/home/rokon/renew/build/unit/CMakeFiles/fresh_feedback.dir
 /home/rokon/renew/build/unit/CMakeFiles/fresh_pbp.dir
+/home/rokon/renew/build/unit/CMakeFiles/fresh_rolling.dir
 /home/rokon/renew/build/unit/CMakeFiles/fresh_short.dir
 /home/rokon/renew/build/unit/CMakeFiles/fresh_working.dir
 /home/rokon/renew/build/camera/CMakeFiles/geometry_msgs_generate_messages_cpp.dir

@@ -1,6 +1,7 @@
 FILE(REMOVE_RECURSE
   "CMakeFiles/unit_generate_messages_cpp"
   "/home/rokon/renew/devel/include/unit/for_double.h"
+  "/home/rokon/renew/devel/include/unit/for_feedback.h"
   "/home/rokon/renew/devel/include/unit/from_robot.h"
 )
 

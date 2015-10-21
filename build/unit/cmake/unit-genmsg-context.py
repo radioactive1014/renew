@@ -1,7 +1,7 @@
 # generated from genmsg/cmake/pkg-genmsg.context.in
 
 messages_str = ""
-services_str = "/home/rokon/renew/src/unit/srv/from_robot.srv;/home/rokon/renew/src/unit/srv/for_double.srv"
+services_str = "/home/rokon/renew/src/unit/srv/from_robot.srv;/home/rokon/renew/src/unit/srv/for_double.srv;/home/rokon/renew/src/unit/srv/for_feedback.srv"
 pkg_name = "unit"
 dependencies_str = "std_msgs"
 langs = "gencpp;genlisp;genpy"

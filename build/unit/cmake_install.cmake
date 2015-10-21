@@ -36,6 +36,7 @@ IF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspeci
   FILE(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/unit/srv" TYPE FILE FILES
     "/home/rokon/renew/src/unit/srv/from_robot.srv"
     "/home/rokon/renew/src/unit/srv/for_double.srv"
+    "/home/rokon/renew/src/unit/srv/for_feedback.srv"
     )
 ENDIF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
 

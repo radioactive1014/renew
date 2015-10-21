@@ -1,6 +1,7 @@
 FILE(REMOVE_RECURSE
   "CMakeFiles/unit_generate_messages_py"
   "/home/rokon/renew/devel/lib/python2.7/dist-packages/unit/srv/_for_double.py"
+  "/home/rokon/renew/devel/lib/python2.7/dist-packages/unit/srv/_for_feedback.py"
   "/home/rokon/renew/devel/lib/python2.7/dist-packages/unit/srv/_from_robot.py"
   "/home/rokon/renew/devel/lib/python2.7/dist-packages/unit/srv/__init__.py"
 )
